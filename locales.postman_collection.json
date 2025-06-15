@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "3f536791-3517-4b95-800d-b3af22a00c79",
+		"name": "locales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31735311",
+		"_collection_link": "https://galactic-sunset-527704.postman.co/workspace/New-Team-Workspace~c0df3331-bb07-424a-98d7-df1c478a5893/collection/31735311-3f536791-3517-4b95-800d-b3af22a00c79?action=share&source=collection_link&creator=31735311"
+	},
+	"item": [
+		{
+			"name": "Add Translations",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"key\": \"form.error.required\",\r\n  \"description\": \"Error message shown when a required field is missing\",\r\n  \"entries\": [\r\n    { \"locale\": \"en\", \"tag\": \"web\", \"content\": \"This field is required.\" },\r\n    { \"locale\": \"es\", \"tag\": \"desktop\", \"content\": \"Este campo es obligatorio.\" },\r\n    { \"locale\": \"de\", \"tag\": \"mobile\", \"content\": \"Dieses Feld ist erforderlich.\" }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/translations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"translations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Searcch",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/translations?key=auth.login_button&locale&tag",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"translations"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "auth.login_button"
+						},
+						{
+							"key": "locale",
+							"value": null
+						},
+						{
+							"key": "tag",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "export",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/translations/export?locale=ar&tag=desktop",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"translations",
+						"export"
+					],
+					"query": [
+						{
+							"key": "locale",
+							"value": "ar"
+						},
+						{
+							"key": "tag",
+							"value": "desktop"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://locale.test",
+			"type": "string"
+		}
+	]
+}
