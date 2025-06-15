@@ -17,6 +17,13 @@ A high-performance Laravel-based translation management API with multi-locale su
 ## 🚀 Getting Started
 ---
 
+### 1. Clone the Repository
+
+git clone https://github.com/moiz2002/laravel-translation-api
+cd laravel-translation-api
+
+---
+
 ### 2. Install Dependencies
 
 composer install
